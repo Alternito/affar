@@ -6,6 +6,7 @@ import Resize from './js/Resize.js';
 import Camera from './js/Camera.js';
 import Renderer from './js/Renderer.js';
 import Load from './js/Load.js';
+import Source from './js/Source.js';
 
 export default class main {
 	static instance;
@@ -22,7 +23,7 @@ export default class main {
 		this.renderer = new Renderer();
 		this.clock = new Clock();
 		this.resize = new Resize();
-
+		this.source = new Source();
 
 		this.light1 = new THREE.PointLight( 0xffffff, 1.7, 50 );
 		this.light1.castShadow = true;

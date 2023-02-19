@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
@@ -43,6 +44,18 @@ module.exports = {
 					outputPath: 'resource/models'
 					}
 				}]
+			},
+
+			{
+				test: /\.(png|jpg|svg)$/,
+				use: 
+				[{
+					loader: 'file-loader',
+					options:
+					{
+					outputPath: 'resource/texture'
+					}
+				}]
 			}
 		]
 	},
@@ -50,6 +63,13 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({ 
 			template: path.resolve(__dirname, './src/index.html')
+		}),
+		new CopyWebpackPlugin({
+			patterns: [
+				{	
+					from: path.resolve(__dirname, './mod')
+				}
+			]
 		}),
 		new CleanWebpackPlugin(),
 	]
