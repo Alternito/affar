@@ -16,7 +16,7 @@ export default class Load {
 
 	setLoader() {
 		this.DracoLoader = new DRACOLoader();
-		this.DracoLoader.setDecoderPath('draco/');
+		this.DracoLoader.setDecoderPath('./draco/');
 		this.DracoLoader.setDecoderConfig({type: 'js'});
 
 		this.GLTFLoader = new GLTFLoader();
