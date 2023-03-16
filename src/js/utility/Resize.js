@@ -1,4 +1,4 @@
-import main from '../main.js';
+import main from '../../main.js';
 import { EventEmitter } from 'eventemitter3/umd/eventemitter3.js';
 
 export default class Resize extends EventEmitter {

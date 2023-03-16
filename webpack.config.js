@@ -53,9 +53,19 @@ module.exports = {
 					loader: 'file-loader',
 					options:
 					{
-					outputPath: 'resource/texture'
+					outputPath: 'resource/textures'
 					}
 				}]
+			},
+
+			{
+				test: /\.(frag|vert|glsl)$/,
+				exclude: '/node_modules/',
+				use:
+				[
+					'raw-loader',
+					'glslify-loader'
+				]
 			}
 		]
 	},
